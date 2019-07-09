@@ -1,0 +1,5 @@
+<% @attractions.each do |attraction| %>
+<p> attraction.name </p>
+<p> attraction.tickets </p>
+<%= link_to "Go on #{attraction.name}", attraction_path(attraction) %>
+<% end %>
