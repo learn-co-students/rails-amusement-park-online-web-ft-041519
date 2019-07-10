@@ -15,6 +15,7 @@ class UsersController < ApplicationController
   end
  
   def show
+    return redirect_to '/' unless session.include? :user_id
     @user = User.find(params[:id])
   end
 
