@@ -1,9 +1,23 @@
 <h1>Welcome <%= @user.name %></h1>
-<p>Mood: <%= @user.mood %></p>
-<p>Tickets: <%= @user.tickets %></p>
-<p>Nausea: <%= @user.nausea %></p>
-<p>Height: <%= @user.height %></p>
-<% if @user.admin %>
-<p>ADMIN</p>
+
+<% if flash[:message] %>
+  <div class="center alert">
+    <p><%= flash[:message] %></p>
+  </div>
 <% end %>
-<%= link_to "See attractions", attractions_path %>
+
+<div class="center">
+<div class="info">
+<% if @user.admin %>
+  <p>ADMIN PAGE</p>
+  <%= link_to "Add New Attraction", new_attraction_path %>
+<% end %>
+<br>
+<br>
+  <p>Mood: <%= @user.mood %></p>
+  <p>Tickets: <%= @user.tickets %></p>
+  <p>Nausea: <%= @user.nausea %></p>
+  <p>Height: <%= @user.height %></p>
+  <%= link_to "See attractions", attractions_path %>
+  </div>
+</div>
