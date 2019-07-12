@@ -1,0 +1,18 @@
+<h1>User Show Page</h1>
+
+User Name: <%= @user.name %><br>
+
+User Height: <%= @user.height %><br>
+
+User happiness: <%= @user.happiness %><br>
+
+User nausea: <%= @user.nausea %><br>
+
+User tickets: <%= @user.tickets %><br>
+
+User mood: <%= @user.mood %><br>
+
+<%= "ADMIN" if @user.admin %><br>
+
+<%= link_to "See Attractions", ride_attractions_path(@user) %>
+<%= link_to "Log Out", logout_path(@user), method: :destroy %>

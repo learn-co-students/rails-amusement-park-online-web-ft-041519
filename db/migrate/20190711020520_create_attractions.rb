@@ -7,7 +7,6 @@ class CreateAttractions < ActiveRecord::Migration[5.2]
       t.integer :happiness_rating
       t.integer :min_height
       t.integer :user_id
-      t.integer :attraction_id
 
       t.timestamps
     end
