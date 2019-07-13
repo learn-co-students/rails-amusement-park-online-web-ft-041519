@@ -3,12 +3,12 @@ class User < ActiveRecord::Base
     has_many :attractions, through: :rides
     has_secure_password
     
-    def initialize(value)
-        #self.admin ||= false
-    end
+    # def initialize(value)
+    #     #self.admin ||= false
+    # end
 
     def mood
-        if self.nauseous > self.happiness
+        if self.nausea > self.happiness
            "sad"
         else
             "happy"
