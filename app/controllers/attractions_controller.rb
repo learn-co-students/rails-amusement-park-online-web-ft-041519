@@ -9,9 +9,9 @@ class AttractionsController < ApplicationController
   end
   
   def show
-    user = User.find_by_id(session[:user_id])
+    @user = User.find_by_id(session[:user_id])
     @attraction = Attraction.find_by(id: params[:id])
-    @ride = Ride.create(user_id: user.id, attraction_id: @attraction.id)
+    @ride = Ride.create(user_id: @user.id, attraction_id: @attraction.id)
   end
 
   def index

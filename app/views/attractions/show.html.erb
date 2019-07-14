@@ -4,9 +4,10 @@
     Min Height: <%= @attraction.min_height %>
     Tickets: <%= @attraction.tickets %>
 
-
-<%= form_for @ride do |f| %>
-  <%= f.button('Go on this ride') %>
+<% if @user.admin == false %>
+  <%= form_for @ride do |f| %>
+    <%= f.button('Go on this ride') %>
+  <% end %>
 <% end %>
 
     <div>

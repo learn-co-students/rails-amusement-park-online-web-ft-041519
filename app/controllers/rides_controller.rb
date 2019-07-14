@@ -7,8 +7,7 @@ class RidesController < ApplicationController
         ride = Ride.find_by(id: params["id"])
         user = User.find_by(id: ride.user_id)
         attraction = Attraction.find_by(id: ride.attraction_id)
-        ride.take_ride
-        flash[:alert] = "Thanks for riding the #{attraction.name}!"
+        @message = ride.take_ride
         redirect_to user_path(user)
     end
 end
