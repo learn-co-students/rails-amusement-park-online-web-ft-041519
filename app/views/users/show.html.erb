@@ -1,0 +1,18 @@
+    <% if @user.admin == true %>
+        ADMIN
+    <%end%>
+
+    <% if session[:message] %>
+        <%= session[:message] %>
+    <%end%>
+    
+    <%= @user.name %>
+    Mood: <%= @user.mood %>
+    Nasuea: <%= @user.nausea %>
+    Height: <%= @user.height %>
+    Tickets: <%= @user.tickets %>
+    <div>
+        <%= link_to "See attractions", attractions_path %>
+        <%= link_to "Log Out", logout_path %>
+    </div>
+
