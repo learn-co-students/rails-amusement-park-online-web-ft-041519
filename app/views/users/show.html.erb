@@ -2,10 +2,8 @@
         ADMIN
     <%end%>
 
-        <%binding.pry%>
-    <% if @message %>
-    <%binding.pry%>
-        <%= @message %>
+    <% if session[:message] %>
+        <%= session[:message] %>
     <%end%>
     
     <%= @user.name %>
