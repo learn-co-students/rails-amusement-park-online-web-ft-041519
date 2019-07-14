@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
 
     def destroy
         session.destroy if session[:user_id]
-        redirect_to new_session_path
+        redirect_to root_url
     end
 
 end     

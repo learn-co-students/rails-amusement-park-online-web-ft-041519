@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   root to: 'application#home'
   resources :sessions, only: [:new, :create]
   get "/signin" => "sessions#new"
-  post "/logout" => "sessions#destroy"
+  get "/logout" => "sessions#destroy"
   root to: "sessions#new"
 end
