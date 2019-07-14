@@ -5,6 +5,6 @@
     <%= f.number_field :nausea %>
     <%= f.number_field :height %>
     <%= f.number_field :tickets %>
-    <%= f.check_box :admin %>
+    <%= f.check_box :admin, {checked: false, checked_value: 1, unchecked_value: 0} %>
     <%= f.submit "Create User" %>
 <%end%>
