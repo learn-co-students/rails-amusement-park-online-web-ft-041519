@@ -5,7 +5,7 @@
     Tickets: <%= @attraction.tickets %>
 
 
-<%= form_for @ride, :url => { :action => @ride.take_ride } do |f| %>
+<%= form_for @ride do |f| %>
   <%= f.button('Go on this ride') %>
 <% end %>
 

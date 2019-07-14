@@ -1,6 +1,11 @@
     <% if @user.admin == true %>
         ADMIN
     <%end%>
+
+    <% if flash[:alert] %>
+        <%= flash[:alert] %>
+        <% flash[:alert] = nil %>
+    <%end%>
     
     <%= @user.name %>
     Mood: <%= @user.mood %>
