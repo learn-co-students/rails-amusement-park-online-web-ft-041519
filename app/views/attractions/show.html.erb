@@ -1,0 +1,10 @@
+<h1><%= @attraction.name %></h1> <br>
+
+Tickets Needed: <%= @attraction.tickets %> <br>
+Happiness Rating: <%= @attraction.happiness_rating %> <br>
+Nausea Rating <%= @attraction.nausea_rating %> <br>
+Minimum Height to Ride: <%= @attraction.min_height %> <br>
+
+<%= button_to "Go on this ride", rides_path, params: {attraction_id: @attraction.id} %> <br>
+
+<%= link_to "Edit Attraction", edit_attraction_path %>

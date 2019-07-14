@@ -1,0 +1,10 @@
+require 'pry'
+
+<h1>Sign In</h1> <br>
+
+<%= form_tag url: signin_path do %>
+    Select a Username: <%= collection_select :user, :name, User.all, :name, :name %> <br>
+    Password: <%= password_field_tag :password %> <br>
+
+    <%= submit_tag 'Sign In' %>
+<% end %>
