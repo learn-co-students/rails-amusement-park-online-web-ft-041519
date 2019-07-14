@@ -3,7 +3,7 @@ class Ride < ActiveRecord::Base
     belongs_to :user
 
     def take_ride
-        if self.tickets > @user.tickets && elf.min_height > @user.height 
+        if self.tickets > @user.tickets && self.min_height > @user.height 
             "Sorry. You do not have enough tickets to ride the #{@attraction.name}. You are not tall enough to ride the #{@attraction.name}."
         elsif self.tickets > @user.tickets
             "Sorry. You do not have enough tickets to ride the #{@attraction.name}."
