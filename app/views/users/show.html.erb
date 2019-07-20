@@ -12,10 +12,7 @@
     <% end %>
 
 Mood: <%= @user.mood %>
-    
-    <% if !@message.nil? %> 
-    <%binding.pry%>
-    <%= @message  %>  
-    <% end %>
+
+    <%= flash[:alert] if flash[:alert] %>  
 
 <%= link_to "Log Out", '/logout' %>

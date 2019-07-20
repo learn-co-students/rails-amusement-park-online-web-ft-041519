@@ -21,7 +21,9 @@ class RidesController < ApplicationController
             @message = "Thanks for riding the " + current_user.rides.last.attraction.name + "!"
         end
 
-        render user_path(@user)
+        flash[:alert] = @message
+
+        redirect_to user_path(@user)
 
     end
 end

@@ -1,9 +1,12 @@
 class AttractionsController < ApplicationController
 
     def new
+        @attraction = Attraction.new
     end
 
     def create
+        @attraction = Attraction.create(attraction_params)
+        redirect_to attraction_path(@attraction)
     end
 
     def show
@@ -11,6 +14,22 @@ class AttractionsController < ApplicationController
     end
 
     def index
+    end
+
+    def edit
+        @attraction = Attraction.find(params[:id])
+    end
+
+    def update
+        @attraction = Attraction.find(params[:id])
+        @attraction.update(name: params[:attraction][:name])
+        redirect_to attraction_path(@attraction)
+    end
+
+    private
+
+    def attraction_params
+        params.require(:attraction).permit(:name, :min_height, :happiness_rating, :nausea_rating, :tickets ) 
     end
 
 end
