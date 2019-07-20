@@ -12,4 +12,16 @@ class RidesController < ApplicationController
     def index
     end
 
+    def take_ride
+        @attraction = Attraction.find(params[:attraction_id])
+        @user = current_user
+        @ride = Ride.create(user: @user, attraction: @attraction)
+        @message = @ride.take_ride  
+        if @message == true 
+            @message = "Thanks for riding the " + current_user.rides.last.attraction.name + "!"
+        end
+
+        render user_path(@user)
+
+    end
 end

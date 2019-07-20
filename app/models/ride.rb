@@ -13,6 +13,7 @@ class Ride < ApplicationRecord
             user.tickets -= attraction.tickets
             user.nausea += attraction.nausea_rating
             user.happiness += attraction.happiness_rating
+            user.save
         end
     end
 

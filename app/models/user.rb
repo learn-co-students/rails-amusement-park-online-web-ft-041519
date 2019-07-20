@@ -7,10 +7,12 @@ class User < ApplicationRecord
     #has_secure_password
 
     def mood
-        if self.nausea > self.happiness
-            "sad"
-        else 
-            "happy"
+        if !(self.nausea || self.happiness).nil?
+            if self.nausea >= self.happiness
+                "sad"
+            else 
+                "happy"
+            end
         end
     end
 
