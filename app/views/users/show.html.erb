@@ -1,0 +1,18 @@
+
+<%= link_to "See attractions", attractions_path %>
+
+    <%= current_user.attributes.each do |x| %>
+
+        <% if current_user.admin == true %>   
+            ADMIN
+        <% else %>
+            <%= x[0].capitalize %>: <%= x[1] %> 
+        <% end %>
+
+    <% end %>
+
+Mood: <%= @user.mood %>
+
+    <%= flash[:alert] if flash[:alert] %>  
+
+<%= link_to "Log Out", '/logout' %>

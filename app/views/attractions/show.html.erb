@@ -1,0 +1,5 @@
+    <%= @attraction.name %>
+
+    <%= button_to "Go on this ride", controller: "rides", action: "take_ride", :attraction_id => @attraction, :class => "button_class" %>
+
+    <%= link_to "Edit Attraction", edit_attraction_path(@attraction) %>
